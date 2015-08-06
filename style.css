@@ -272,7 +272,9 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-size: 16px;
+	color: hsl(0, 0%, 25%);
+	font-family: 'PT Serif', serif;
+	font-size: 18px;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -283,7 +285,11 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
+	clear: right;
+	font-weight: 900;
+	font-family: 'Lato', sans-serif;
+	color: #000;
+	color: hsl(0, 0%, 0%);
 }
 
 p {
@@ -728,7 +734,62 @@ a:active {
 .widget_search .search-submit {
 	display: none;
 }
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-branding {
+	padding: 6rem 0;
+	text-align: center;
+	background: #2c86ba;
 
+}
+
+.site-title {
+	font-weight: 700;
+	font-size: 40px;
+	text-transform: uppercase;
+	line-height: normal;
+	padding-bottom: 1rem;
+}
+
+.site-description {
+	font-weight: 100;
+	font-size: 20px
+	font-size: 2rem;
+}
+
+.site-title a,
+.site-description {
+	color: #fff;
+}
+.title-box {
+	width: 600px;
+	max-width: 75%;
+	padding: 4rem;
+	margin: 0 auto;
+	border: solid 1px #fff;
+	background-color: #000;
+	background-color: hsla(0, 0%, 0%, 0.7);
+}
+@media screen and (max-width: 600px) {
+	.site-branding {
+		padding: 0;
+	}
+	.title-box {
+		max-width: 100%;
+		margin: 0;
+		padding: 4rem;
+		border: none;
+	}
+}
+.header-image img{
+	display: block;
+	margin: 0 auto;
+}
+.header-background-image {
+	background: no-repeat center;
+	background-size: cover !important;
+}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

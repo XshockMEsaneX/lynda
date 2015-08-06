@@ -65,17 +65,13 @@ function lynda_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'lynda_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	// add_theme_support( 'custom-background', apply_filters( 'lynda_custom_background_args', array(
+	// 	'default-color' => 'ffffff',
+	// 	'default-image' => '',
+	// ) ) );
 }
 endif; // lynda_setup
 add_action( 'after_setup_theme', 'lynda_setup' );
@@ -115,6 +111,12 @@ add_action( 'widgets_init', 'lynda_widgets_init' );
  */
 function lynda_scripts() {
 	wp_enqueue_style( 'lynda-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'content-sidebar-layout', get_template_directory_uri(). '/layouts/content-sidebar.css' );
+
+	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic|Lato:400,100,300,400italic,700,900' );
+
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'lynda-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
