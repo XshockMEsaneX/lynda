@@ -45,6 +45,7 @@ function lynda_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'lynda' ),
+		'social' => esc_html__( 'Social Menu', 'lynda' ),
 	) );
 
 	/*
@@ -103,6 +104,16 @@ function lynda_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+    		'name'          => esc_html__( 'Footer Widgets', 'lynda' ),
+    		'id'            => 'sidebar-2',
+    		'description'   => esc_html__( 'Footer widgets area appears in the footer of the site.', 'lynda' ),
+    		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    		'after_widget'  => '</aside>',
+    		'before_title'  => '<h2 class="widget-title">',
+    		'after_title'   => '</h2>',
+    ) );
 }
 add_action( 'widgets_init', 'lynda_widgets_init' );
 
@@ -121,6 +132,8 @@ function lynda_scripts() {
 	wp_enqueue_script( 'lynda-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'lynda-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'lynda-hide-search', get_template_directory_uri() . '/js/hide-search.js', array('jquery'), '20140806', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
